@@ -1,0 +1,58 @@
+===================================================================================================
+Modifications to the Human Activity Recognition Using Smartphones Dataset
+===================================================================================================
+Coursera assignment week 4 - Robyn Larsen
+===================================================================================================
+
+Source of data
+=========================================
+[1] Davide Anguita, Alessandro Ghio, Luca Oneto, Xavier Parra and Jorge L. Reyes-Ortiz. A Public Domain Dataset for Human Activity Recognition Using Smartphones. 21th European Symposium on Artificial Neural Networks, Computational Intelligence and Machine Learning, ESANN 2013. Bruges, Belgium 24-26 April 2013. 
+
+Data information
+=========================================
+The experiments have been carried out with a group of 30 volunteers within an age bracket of 19-48 years. Each person performed six activities (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING) wearing a smartphone (Samsung Galaxy S II) on the waist. Using its embedded accelerometer and gyroscope, we captured 3-axial linear acceleration and 3-axial angular velocity at a constant rate of 50Hz. The experiments have been video-recorded to label the data manually. The obtained dataset has been randomly partitioned into two sets, where 70% of the volunteers was selected for generating the training data and 30% the test data. 
+
+The sensor signals (accelerometer and gyroscope) were pre-processed by applying noise filters and then sampled in fixed-width sliding windows of 2.56 sec and 50% overlap (128 readings/window). The sensor acceleration signal, which has gravitational and body motion components, was separated using a Butterworth low-pass filter into body acceleration and gravity. The gravitational force is assumed to have only low frequency components, therefore a filter with 0.3 Hz cutoff frequency was used. From each window, a vector of features was obtained by calculating variables from the time and frequency domain. See 'features_info.txt' for more details. 
+
+1. The dataset:
+=========================================
+The original UCI HAR dataset was downloaded from the following site.
+
+https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip  
+
+2. Variable names were created as follows:
+=========================================
+
+- 'features'<- 'features.txt': 
+	List of all features (561 rows, 2 columns).
+
+- 'activities' <- 'activity_labels.txt': 
+	Links the class labels with their activity name (6 rows, 2 columns)
+
+- 'x_test' <- 'test/X_test.txt': 
+	Test set (2947 rows, 561 columns)
+
+- 'y_test' <- 'test/y_test.txt':
+	Test labels (2947, 1 column)
+
+- 'y_train' <- 'train/y_train.txt': 
+	Training labels (7352 rows, 1 column).
+
+- 'x_train' <- 'train/x_train.txt': 
+	Training set (7352 rows, 561 columns).
+
+- 'train/subject_train.txt': 
+	Each row identifies the subject who performed the activity for each window sample. Its range is from 1 to 30. 
+
+3. Merged dataset contains the following:
+=========================================
+
+- 'x' was created by merging 'x_train'and 'x_test'(10299 rows, 561 columns)
+
+- 'y' was created by merging 'y_train'and 'y_test'(10299 rows, 1 columns)
+
+- 'subject' was created by merging 'subject_test' and 'subject_train'
+
+- 'Merged data' was created by merging 'subject', 'y'and 'x'
+
+- "TidyData' was created by subsetting only columns 'subject', 'code' and 'mean' and 'std' for each measurement.
